@@ -9,7 +9,7 @@ Attributes include:
 
 ## Dependency Tree Example
 ```python 
-EXAMPLE = "(GREETING (hi) (nice) (to) (meet) (you) (NAME (FIRSTNAME (Bob) LASTNAME (Bezos))) (QUESTION (do) (you) (know) (the) (capital) (of) (LOCATION (Brazil))(?)))"
+EXAMPLE = "(GREETING (hi) (nice) (to) (meet) (you) (NAME (FIRSTNAME (Bob)) (LASTNAME (Bezos))) (QUESTION (do) (you) (know) (the) (capital) (of) (LOCATION (Brazil))(?)))"
 
 tree = Tree(representation=EXAMPLE)
 ```

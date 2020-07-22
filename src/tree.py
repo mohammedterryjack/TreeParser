@@ -51,10 +51,34 @@ class Tree:
             flat_list=self.as_list,
             depths=list(self.enumerate_depth(self.as_nested_list))
         )
+        self.leaves = self.get_leaf_values(keys=self.get_root_keys())
 
     def __str__(self) -> str:
         return dumps(self.as_nested_dictionary,indent=3)
     
+    def get_root_keys(self) -> list:
+        """ 
+        return the words directly connected to the root node of the tree 
+        """
+        for key,values in self.as_nested_dictionary.items():
+            if key in values:
+                values.remove(key)
+                return values
+
+    def get_leaf_values(self, keys:list) -> list:
+        """
+        returns the final nested value for each key
+        """
+        new_keys = []
+        for key in keys:
+            if key in self.as_nested_dictionary:
+                new_keys.extend(self.as_nested_dictionary.get(key))
+            else:
+                new_keys.append(key)
+        if keys == new_keys:
+            return keys
+        return self.get_leaf_values(new_keys)
+
     @staticmethod
     def flatten(nested_list:list) -> Iterable:
         """

@@ -6,10 +6,17 @@ Parse any string into a nested Tree objects
 EXAMPLE = "(GREETING (hi) (nice) (to) (meet) (you) (NAME (FIRSTNAME (Bob) LASTNAME (Bezos))) (QUESTION (do) (you) (know) (the) (capital) (of) (LOCATION (Brazil))(?)))"
 
 tree = Tree(representation=EXAMPLE)
+```
+
+```
+tree.leaves
+>>> ['hi', 'nice', 'to', 'meet', 'you', 'Bob', 'Bezos', 'do', 'you', 'know', 'the', 'capital', 'of', 'Brazil', '?']
+```
+
+```
 tree.as_nested_dictionary
 >>>{
    "GREETING": [
-      "GREETING",
       "hi",
       "nice",
       "to",
@@ -58,6 +65,14 @@ tree.as_list
 ```
 EXAMPLE = "( * (+ (5) (2) ) (- (3) (4) ) )"
 tree = Tree(representation=EXAMPLE)
+```
+
+```
+tree.leaves
+>>>['5', '2', '3', '4']
+```
+
+```
 tree.as_nested_dictionary
 >>>{
    "*": [

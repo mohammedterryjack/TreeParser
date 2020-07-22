@@ -8,6 +8,8 @@ Attributes include:
    
 
 ## Dependency Tree Example
+![alt text](https://github.com/mohammedterryjack/TreeParser/blob/master/example_tree_1.png?raw=true)
+
 ```python 
 EXAMPLE = "(GREETING (hi) (nice) (to) (meet) (you) (NAME (FIRSTNAME (Bob)) (LASTNAME (Bezos))) (QUESTION (do) (you) (know) (the) (capital) (of) (LOCATION (Brazil))(?)))"
 
@@ -68,6 +70,7 @@ tree.as_list
 ```
 
 ## Arithmetic Example
+![alt text](https://github.com/mohammedterryjack/TreeParser/blob/master/example_tree_2.png?raw=true)
 ```
 EXAMPLE = "( * (+ (5) (2) ) (- (3) (4) ) )"
 tree = Tree(representation=EXAMPLE)

@@ -1,5 +1,12 @@
 # TreeParser
-Parse any string into a nested Tree objects
+Parse any string into a Tree objects for easy manipulation
+
+`Tree` attributes include:
+   `.leaves` - these are the terminal/leaf nodes of the tree (useful to strip away labels for example)
+   `.as_nested_dictionary` - this is a nested dictionary of the tree structure (useful to see the adult-child relation of nodes in the tree)
+   `.as_nested_list` - this is a python list of the exact tree string given
+   `.as_list`  - a flattened list of each node in the tree in the order given in the string
+   
 
 ## Dependency Tree Example
 ```python 

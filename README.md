@@ -1,7 +1,7 @@
 # TreeParser
 Parse any string into a nested Tree objects
 
-## e.g.
+## Dependency Tree Example
 ```python 
 EXAMPLE = "(GREETING (hi) (nice) (to) (meet) (you) (NAME (FIRSTNAME (Bob) LASTNAME (Bezos))) (QUESTION (do) (you) (know) (the) (capital) (of) (LOCATION (Brazil))(?)))"
 
@@ -52,4 +52,25 @@ tree.as_nested_list
 ```
 tree.as_list
 >>>['GREETING', 'hi', 'nice', 'to', 'meet', 'you', 'NAME', 'FIRSTNAME', 'Bob', 'LASTNAME', 'Bezos', 'QUESTION', 'do', 'you', 'know', 'the', 'capital', 'of', 'LOCATION', 'Brazil', '?']
+```
+
+## Arithmetic Example
+```
+EXAMPLE = "( * (+ (5) (2) ) (- (3) (4) ) )"
+tree = Tree(representation=EXAMPLE)
+tree.as_nested_dictionary
+>>>{
+   "*": [
+      "+",
+      "-"
+   ],
+   "+": [
+      "5",
+      "2"
+   ],
+   "-": [
+      "3",
+      "4"
+   ]
+}
 ```
